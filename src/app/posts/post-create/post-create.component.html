@@ -1,0 +1,17 @@
+<mat-card>
+<form (submit)="onSubmit(heroForm)" #heroForm="ngForm">
+    <mat-form-field>
+      <input matInput name="title"  #title="ngModel" ngModel placeholder="Enter title" required minlength="3">
+      <mat-error *ngIf="title.invalid">Enter that fucking title</mat-error>
+    </mat-form-field>
+
+  <br>
+    <mat-form-field class="example-full-width">
+      <textarea style="resize:none;" name="content" #content="ngModel" ngModel matInput rows="6"  placeholder="Enter what you need to do" required minlength="3"></textarea>
+      <mat-error *ngIf="content.invalid">Enter content or go away</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit"> Submit </button> 
+  </form>
+
+</mat-card>  
+
